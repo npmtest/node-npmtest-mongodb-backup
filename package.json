@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-mongodb-backup",     "homepage": "https://github.com/npmtest/node-npmtest-mongodb-backup",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-mongodb-backup.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [mongodb-backup (v1.6.9)](https://github.com/hex7c0/mongodb-backup)  [![npm package](https://img.shields.io/npm/v/npmtest-mongodb-backup.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mongodb-backup) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mongodb-backup.svg)](https://travis-ci.org/npmtest/node-npmtest-mongodb-backup)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-mongodb-backup",
+    "keywords": [
+        "coverage",
+        "test",
+        "mongodb-backup"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_mongodb_backup.js",
+    "name": "npmtest-mongodb-backup",
+    "nameAlias": "npmtest_mongodb_backup",
+    "nameOriginal": "npmtest-mongodb-backup",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-mongodb-backup.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
